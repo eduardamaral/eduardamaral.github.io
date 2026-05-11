@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth scroll-pt-24">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maria Eduarda Valadares Amaral</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Lora:ital,wght@0,400;0,500;0,600&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS (CDN) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Lucide Icons (CDN) -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Configuração da Nova Identidade Visual no Tailwind -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            light: '#decfff',   /* Azul/Lilás muito claro - Fundo suave e destaques */
+                            muted: '#ada3da',   /* Roxo acinzentado - Ícones secundários e bordas */
+                            accent: '#c7b8ff',  /* Lilás claro - Detalhes e formas decorativas */
+                            dark: '#5a3e71',    /* Roxo escuro (Ameixa) - Títulos, botões e rodapé */
+                            50: '#f8f7fc',      /* Off-white com toque de lilás para o fundo da página */
+                            lilas: '#c7b8ff',    /* Lilás - Corrigido aqui */
+                          
+                          amarelo: '#fffce2', /* Amarelo - Corrigido aqui */
+                          champagne: '#F3E2B3', /* champagne - Corrigido aqui */
+                          verde: '#a8c3a0', /* champagne - Corrigido aqui */
+                          bronze: '#b88474' /* bronze - Corrigido aqui */
+                        }
+                    },
+                    fontFamily: {
+                        sans:['Inter', 'sans-serif'],
+                        serif: ['Lora', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Animação suave para o Acordeão do FAQ */
+        details > summary {
+            list-style: none;
+        }
+        details > summary::-webkit-details-marker {
+            display: none;
+        }
+        details[open] summary ~ * {
+            animation: fadeIn 0.3s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="bg-brand-50 text-gray-700 font-sans antialiased">
+
+<!-- Header / Navegação -->
+    <header class="fixed top-0 w-full bg-white/90 backdrop-blur-md z-50 border-b border-brand-light/50">
+        <div class="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
+            
+            <!-- Nome e CRP -->
+            <a href="#home" class="flex flex-col">
+                <span class="font-serif text-xl md:text-2xl text-brand-dark font-medium leading-tight">
+                    Maria Eduarda Valadares Amaral
+                </span>
+                <span class="text-xs md:text-sm text-brand-muted font-medium tracking-wide">
+                    CRP 02/33300
+                </span>
+            </a>
+            
+            <!-- Menu Desktop -->
+            <nav class="hidden md:flex gap-8 text-sm font-medium text-gray-600">
+                <a href="#home" class="hover:text-brand-muted transition-colors">Início</a>
+                <a href="#como-funciona" class="hover:text-brand-muted transition-colors">Como Funciona</a>
+                <a href="#publico" class="hover:text-brand-muted transition-colors">Público</a>
+                <a href="#sobre" class="hover:text-brand-muted transition-colors">Sobre Mim</a>
+                <a href="#faq" class="hover:text-brand-muted transition-colors">Dúvidas</a>
+            </nav>
+
+            <!-- CTA Header -->
+            <a href="https://wa.me/5511999999999" target="_blank" class="hidden md:flex items-center gap-2 bg-brand-dark text-white px-5 py-2.5 rounded-full hover:bg-opacity-90 transition-all shadow-sm text-sm font-medium">
+                <i data-lucide="message-circle" class="w-4 h-4"></i>
+                Agendar Consulta
+            </a>
+
+            <!-- Menu Mobile -->
+            <button class="md:hidden text-brand-dark">
+                <i data-lucide="menu" class="w-6 h-6"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- 1. Capa (Hero Section) -->
+    <!-- Aqui a classe bg-brand-lilas está funcionando perfeitamente agora -->
+    <section id="home" class="bg-brand-lilas pt-32 pb-20 md:pt-48 md:pb-32 px-6 flex flex-col items-center text-center relative overflow-hidden">
+        <!-- Elemento decorativo de fundo -->
+        <div class="absolute top-0 left-1/2 transform -translate-x-1/2 w-[800px] h-[400px] bg-gradient-to-b from-white/40 to-transparent rounded-full blur-3xl -z-10"></div>
+        
+        <div class="max-w-3xl mx-auto">
+            <span class="text-brand-dark opacity-70 font-semibold tracking-wider text-sm uppercase mb-4 block"></span>
+            <h1 class="font-serif text-4xl md:text-6xl text-brand-dark mb-6 leading-tight">
+                Entre o que você sente, pensa e vive, há muito a ser  compreendido.
+            </h1>
+            <p class="text-lg md:text-xl text-brand-dark opacity-80 mb-10 max-w-2xl mx-auto font-light leading-relaxed">
+                Atendimento especializado para crianças, adolescentes, jovens adultos e orientação parental. Uma parceria entre clínica e família baseada em evidências e um olhar atento às singularidades.
+            </p>
+            
+            <!-- CTA Principal -->
+            <a href="https://wa.me/5511999999999" target="_blank" class="inline-flex items-center gap-2 bg-brand-dark text-white px-8 py-4 rounded-full text-lg hover:bg-opacity-90 hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
+                <i data-lucide="message-circle" class="w-5 h-5"></i>
+                Conversar com Maria Eduarda
+            </a>
+        </div>
+    </section>
+
+<!-- 2. Como Funciona (Cards) -->
+    <section id="como-funciona" class="py-20 bg-brand-amarelo">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="font-serif text-3xl md:text-4xl text-brand-dark mb-4">Como funciona o acompanhamento?</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto"></p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                
+                <!-- Card 1 -->
+                <div class="bg-brand-50 p-8 rounded-3xl border border-brand-light/50 hover:shadow-md transition-shadow group">
+                    <div class="w-12 h-12 bg-brand-light text-brand-dark rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <i data-lucide="users" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="font-serif text-xl text-brand-dark mb-3">1. Primeiro Contato</h3>
+                    <p class="text-gray-600 font-light leading-relaxed">O primeiro contato possui duração média de 30 minutos e acontece de forma acolhedora, sem custo, com o objetivo de compreender a demanda inicial, conhecer a história da criança/adolescente e orientar a família sobre o processo terapêutico.</p>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="bg-brand-50 p-8 rounded-3xl border border-brand-light/50 hover:shadow-md transition-shadow group">
+                    <div class="w-12 h-12 bg-brand-light text-brand-dark rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <i data-lucide="puzzle" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="font-serif text-xl text-brand-dark mb-3">2. Sessões de Acompanhamento</h3>
+                    <p class="text-gray-600 font-light leading-relaxed">As sessões possuem duração média de 50 minutos e são conduzidas de forma individualizada. Usamos atividades lúdicas e recursos visuais para avaliar habilidades, comportamentos e emoções.</p>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bg-brand-50 p-8 rounded-3xl border border-brand-light/50 hover:shadow-md transition-shadow group">
+                    <div class="w-12 h-12 bg-brand-light text-brand-dark rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <i data-lucide="sprout" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="font-serif text-xl text-brand-dark mb-3">3. Processo Terapêutico</h3>
+                    <p class="text-gray-600 font-light leading-relaxed">Um espaço seguro onde olhamos para além das dificuldades. De forma lúdica e gentil, trabalhamos o equilíbrio emocional e as habilidades sociais. A psicoterapia é conduzida a partir da terapia cognitivo-comportamental (TCC) com foco na compreensão de pensamentos, emoções e comportamentos que impactam na rotina. </p>
+                </div>
+
+                <!-- Card 4 (NOVO) -->
+                <div class="bg-brand-50 p-8 rounded-3xl border border-brand-light/50 hover:shadow-md transition-shadow group">
+                    <div class="w-12 h-12 bg-brand-light text-brand-dark rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <i data-lucide="heart-handshake" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="font-serif text-xl text-brand-dark mb-3">4. Orientação Parental</h3>
+                    <p class="text-gray-600 font-light leading-relaxed">Buscamos auxiliar os responsáveis na compreensão das demandas da criança/adolescente e na construção conjunta de estratégias mais funcionais para o cotidiano familiar.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+      
+      
+    </section>
+
+<!-- 3. Público-alvo -->
+    <section id="publico" class="py-20 bg-brand-lilas">
+        <div class="max-w-4xl mx-auto px-6">
+            <h2 class="font-serif text-3xl md:text-4xl text-brand-dark text-center mb-12">Posso te ajudar com:</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Item 1 -->
+                <div class="flex items-center gap-4 bg-white p-5 rounded-2xl shadow-sm border border-brand-light/30">
+                    <i data-lucide="brain" class="text-brand-muted w-6 h-6 flex-shrink-0"></i>
+                    <span class="text-gray-700 font-medium">Emoções e Regulação Emocional</span>
+                </div>
+                
+                <!-- Item 2 -->
+                <div class="flex items-center gap-4 bg-white p-5 rounded-2xl shadow-sm border border-brand-light/30">
+                    <i data-lucide="cloud-rain" class="text-brand-muted w-6 h-6 flex-shrink-0"></i>
+                    <span class="text-gray-700 font-medium">Ansiedade e Sofrimento Psíquico</span>
+                </div>
+                
+                <!-- Item 3 -->
+                <div class="flex items-center gap-4 bg-white p-5 rounded-2xl shadow-sm border border-brand-light/30">
+                    <i data-lucide="heart-handshake" class="text-brand-muted w-6 h-6 flex-shrink-0"></i>
+                    <span class="text-gray-700 font-medium">Relações Interpessoais</span>
+                </div>
+                
+                <!-- Item 4 -->
+                <div class="flex items-center gap-4 bg-white p-5 rounded-2xl shadow-sm border border-brand-light/30">
+                    <i data-lucide="user-search" class="text-brand-muted w-6 h-6 flex-shrink-0"></i>
+                    <span class="text-gray-700 font-medium">Autoestima e Autoconhecimento</span>
+                </div>
+                
+                <!-- Item 5 -->
+                <div class="flex items-center gap-4 bg-white p-5 rounded-2xl shadow-sm border border-brand-light/30">
+                    <i data-lucide="sprout" class="text-brand-muted w-6 h-6 flex-shrink-0"></i>
+                    <span class="text-gray-700 font-medium">Desenvolvimento Infantil e Adolescente</span>
+                </div>
+                
+                <!-- Item 6 -->
+                <div class="flex items-center gap-4 bg-white p-5 rounded-2xl shadow-sm border border-brand-light/30">
+                    <i data-lucide="users" class="text-brand-muted w-6 h-6 flex-shrink-0"></i>
+                    <span class="text-gray-700 font-medium">Dificuldades Sociais e Comportamentais</span>
+                </div>
+                
+                <!-- Item 7 (Novo) -->
+                <div class="flex items-center gap-4 bg-white p-5 rounded-2xl shadow-sm border border-brand-light/30">
+                    <i data-lucide="infinity" class="text-brand-muted w-6 h-6 flex-shrink-0"></i>
+                    <span class="text-gray-700 font-medium">Neurodivergência</span>
+                </div>
+                
+                <!-- Item 8 (Novo) -->
+                <div class="flex items-center gap-4 bg-white p-5 rounded-2xl shadow-sm border border-brand-light/30">
+                    <i data-lucide="home" class="text-brand-muted w-6 h-6 flex-shrink-0"></i>
+                    <span class="text-gray-700 font-medium">Orientação e Suporte Parental</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Sobre Mim -->
+    <section id="sobre" class="py-24 bg-brand-amarelo">
+        <div class="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+            <!-- Imagem Placeholder -->
+            <div class="relative">
+                <!-- Fundo decorativo usando o lilás mais vibrante da paleta -->
+                <div class="absolute inset-0 bg-brand-accent rounded-t-full rounded-b-[3rem] transform translate-x-4 translate-y-4 -z-10 opacity-70"></div>
+                <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                     alt="Foto da Psicóloga" 
+                     class="w-full h-auto object-cover aspect-[4/5] rounded-t-full rounded-b-[3rem] shadow-lg">
+            </div>
+            
+            <!-- Texto -->
+            <div>
+                <h2 class="font-serif text-3xl md:text-4xl text-brand-dark mb-6">Prazer, sou a Maria Eduarda</h2>
+                <p class="text-gray-600 mb-4 font-light leading-relaxed">
+                    Sou psicóloga formada pela Universidade Católica de Pernambuco (UNICAP), com especialização em Neuropsicologia dos Transtornos Mentais pela PUC-PR.  
+                </p>
+                <p class="text-gray-600 mb-8 font-light leading-relaxed">
+                    Atuo na clínica com base na Terapia Cognitivo-Comportamental (TCC), realizando acompanhamento psicológico de crianças, adolescentes e jovens adultos.
+                </p>
+              <p class="text-gray-600 mb-8 font-light leading-relaxed">
+                   Possuo experiência no contexto clínico e escolar, incluindo atuação com desenvolvimento infantil, orientação parental, habilidades sociais e acompanhamento de crianças neurodivergentes. Minha trajetória também inclui experiência em intervenções baseadas em análise do comportamento aplicada (ABA), integradas ao cuidado psicológico de forma individualizada e ética.
+                </p>
+              <p class="text-gray-600 mb-8 font-light leading-relaxed">
+                Acredito em uma prática clínica construída através da escuta, do vínculo terapêutico e da compreensão dos padrões emocionais e comportamentais que atravessam a forma como cada indivíduo vive suas experiências e relações.
+                </p>
+                <a href="https://wa.me/5511999999999" class="text-brand-dark font-medium hover:text-brand-muted transition-colors flex items-center gap-2">
+                    Vamos conversar? <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. FAQ (Perguntas Frequentes) -->
+    <section id="faq" class="py-20 bg-brand-lilas">
+        <div class="max-w-3xl mx-auto px-6">
+            <h2 class="font-serif text-3xl md:text-4xl text-brand-dark text-center mb-12">Dúvidas Frequentes</h2>
+            
+            <div class="space-y-4">
+                <!-- Pergunta 1 -->
+                <details class="group bg-white p-6 rounded-2xl shadow-sm cursor-pointer border border-brand-light/50">
+                    <summary class="flex justify-between items-center font-medium text-brand-dark">
+                        A primeira sessão é gratuita?
+                        <span class="transition-transform duration-300 group-open:-rotate-180 text-brand-muted">
+                            <i data-lucide="chevron-down" class="w-5 h-5"></i>
+                        </span>
+                    </summary>
+                    <p class="mt-4 text-gray-600 font-light leading-relaxed">
+                        Sim. A primeira sessão de acolhimento acontece sem custo, com o objetivo de compreender a demanda inicial e orientar a família sobre o funcionamento do acompanhamento. Os valores são informados nessa sessão, onde também explico as formas de pagamento disponíveis.
+                    </p>
+                </details>
+
+                <!-- Pergunta 2 -->
+                <details class="group bg-white p-6 rounded-2xl shadow-sm cursor-pointer border border-brand-light/50">
+                    <summary class="flex justify-between items-center font-medium text-brand-dark">
+                        Você atende por plano de saúde?
+                        <span class="transition-transform duration-300 group-open:-rotate-180 text-brand-muted">
+                            <i data-lucide="chevron-down" class="w-5 h-5"></i>
+                        </span>
+                    </summary>
+                    <p class="mt-4 text-gray-600 font-light leading-relaxed">
+                        Meus atendimentos são exclusivamente particulares. No entanto, emito recibos e notas fiscais que podem ser utilizados para solicitação de reembolso junto ao seu convênio médico.
+                    </p>
+                </details>
+
+                <!-- Pergunta 3 -->
+                <details class="group bg-white p-6 rounded-2xl shadow-sm cursor-pointer border border-brand-light/50">
+                    <summary class="flex justify-between items-center font-medium text-brand-dark">
+                        Qual é a duração das sessões?
+                        <span class="transition-transform duration-300 group-open:-rotate-180 text-brand-muted">
+                            <i data-lucide="chevron-down" class="w-5 h-5"></i>
+                        </span>
+                    </summary>
+                    <p class="mt-4 text-gray-600 font-light leading-relaxed">
+                       Os atendimentos possuem duração de 60 minutos. A frequência e formato do acompanhamento são definidos de acordo com as necessidades de cada pessoa e os objetivos do processo terapêutico.
+                    </p>
+                </details>
+              
+             <!-- Pergunta 4 -->
+                <details class="group bg-white p-6 rounded-2xl shadow-sm cursor-pointer border border-brand-light/50">
+                    <summary class="flex justify-between items-center font-medium text-brand-dark">
+                        Os atendimentos são presenciais ou online?
+                        <span class="transition-transform duration-300 group-open:-rotate-180 text-brand-muted">
+                            <i data-lucide="chevron-down" class="w-5 h-5"></i>
+                        </span>
+                    </summary>
+                    <p class="mt-4 text-gray-600 font-light leading-relaxed">
+                        Os atendimentos podem ser tanto presenciais quanto online.
+                    </p>
+                </details> 
+             
+                <!-- Pergunta 5 -->
+                <details class="group bg-white p-6 rounded-2xl shadow-sm cursor-pointer border border-brand-light/50">
+                    <summary class="flex justify-between items-center font-medium text-brand-dark">
+                        Você realiza orientação parental sem atender diretamente a criança?
+                        <span class="transition-transform duration-300 group-open:-rotate-180 text-brand-muted">
+                            <i data-lucide="chevron-down" class="w-5 h-5"></i>
+                        </span>
+                    </summary>
+                    <p class="mt-4 text-gray-600 font-light leading-relaxed">
+                        A orientação parental pode acontecer em alguns casos específicos, mediante avaliação prévia da demanda e definição dos objetivos do acompanhamento.
+                    </p>
+                </details> 
+              
+                <!-- Pergunta 6 -->
+                <details class="group bg-white p-6 rounded-2xl shadow-sm cursor-pointer border border-brand-light/50">
+                    <summary class="flex justify-between items-center font-medium text-brand-dark">
+                        Existe acompanhamento escolar?
+                        <span class="transition-transform duration-300 group-open:-rotate-180 text-brand-muted">
+                            <i data-lucide="chevron-down" class="w-5 h-5"></i>
+                        </span>
+                    </summary>
+                    <p class="mt-4 text-gray-600 font-light leading-relaxed">
+                        Quando necessário, pode haver alinhamento com escola e outros profissionais envolvidos no caso.
+                    </p>
+                </details> 
+              
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. Rodapé -->
+    <footer class="bg-white/90 text-brand-dark py-12">
+        <div class="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8 mb-8 text-center md:text-left">
+            
+            <!-- Marca/Infos -->
+            <div>
+                <h3 class="font-serif text-2xl text-brand-dark mb-4">Maria Eduarda Valadares Amaral</h3>
+                <p class="font-light text-brand-dark opacity-90 text-sm">
+                    Cuidando da sua saúde mental com dedicação, ética e embasamento científico.
+                </p>
+            </div>
+
+            <!-- Contatos -->
+            <div class="flex flex-col items-center md:items-start space-y-3">
+                <h4 class="text-brand-dark font-medium mb-2">Contatos</h4>
+                <a href="#" class="flex items-center gap-2 font-light hover:text-white transition-colors">
+                    <i data-lucide="phone" class="w-4 h-4"></i> (87) 98829-8340
+                </a>
+                <a href="#" class="flex items-center gap-2 font-light hover:text-white transition-colors">
+                    <i data-lucide="instagram" class="w-4 h-4"></i> @psieduardamaral
+                </a>
+                <span class="flex items-center gap-2 font-light text-sm mt-2 opacity-80">
+                    <i data-lucide="file-check-2" class="w-4 h-4"></i> CRP: 02/33300
+                </span>
+            </div>
+
+            <!-- Espaço vazio para Endereço (Deixado para uso futuro) -->
+            <div class="flex flex-col items-center md:items-start space-y-3">
+                <!--
+                <h4 class="text-brand-dark font-medium mb-2">Endereço</h4>
+                <p class="font-light text-sm text-center md:text-left opacity-90">
+                    Rua Exemplo de Endereço, 123<br>
+                    Sala 45 - Bairro<br>
+                    Cidade - Estado, CEP 00000-000
+                </p>
+                -->
+            </div>
+            
+        </div> <!-- O erro estava aqui: esta tag havia sido comentada sem querer! -->           
+
+        <div class="max-w-6xl mx-auto px-6 border-t border-brand-muted/30 pt-6 text-center text-sm font-light opacity-70">
+            &copy; 2026 Maria Eduarda Valadares Amaral. Todos os direitos reservados.
+        </div>
+    </footer>
+
+    <!-- Inicialização dos ícones Lucide -->
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
