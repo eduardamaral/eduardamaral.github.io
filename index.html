@@ -23,17 +23,16 @@
                 extend: {
                     colors: {
                         brand: {
-                            light: '#decfff',   /* Azul/Lilás muito claro - Fundo suave e destaques */
-                            muted: '#ada3da',   /* Roxo acinzentado - Ícones secundários e bordas */
-                            accent: '#c7b8ff',  /* Lilás claro - Detalhes e formas decorativas */
-                            dark: '#5a3e71',    /* Roxo escuro (Ameixa) - Títulos, botões e rodapé */
-                            50: '#f8f7fc',      /* Off-white com toque de lilás para o fundo da página */
-                            lilas: '#c7b8ff',    /* Lilás - Corrigido aqui */
-                          
-                          amarelo: '#fffce2', /* Amarelo - Corrigido aqui */
-                          champagne: '#F3E2B3', /* champagne - Corrigido aqui */
-                          verde: '#a8c3a0', /* champagne - Corrigido aqui */
-                          bronze: '#b88474' /* bronze - Corrigido aqui */
+                            light: '#decfff',   
+                            muted: '#ada3da',   
+                            accent: '#c7b8ff',  
+                            dark: '#5a3e71',    
+                            50: '#f8f7fc',      
+                            lilas: '#c7b8ff',    
+                            amarelo: '#fffce2', 
+                            champagne: '#F3E2B3', 
+                            verde: '#a8c3a0', 
+                            bronze: '#b88474' 
                         }
                     },
                     fontFamily: {
@@ -69,7 +68,7 @@
         <div class="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
             
             <!-- Nome e CRP -->
-            <a href="#home" class="flex flex-col">
+            <a href="#home" class="flex flex-col relative z-50">
                 <span class="font-serif text-xl md:text-2xl text-brand-dark font-medium leading-tight">
                     Maria Eduarda Valadares Amaral
                 </span>
@@ -87,35 +86,47 @@
                 <a href="#faq" class="hover:text-brand-muted transition-colors">Dúvidas</a>
             </nav>
 
-            <!-- CTA Header -->
+            <!-- CTA Header Desktop -->
             <a href="https://wa.me/5587988298340" target="_blank" class="hidden md:flex items-center gap-2 bg-brand-dark text-white px-5 py-2.5 rounded-full hover:bg-opacity-90 transition-all shadow-sm text-sm font-medium">
                 <i data-lucide="message-circle" class="w-4 h-4"></i>
                 Agendar Consulta
             </a>
 
-            <!-- Menu Mobile -->
-            <button class="md:hidden text-brand-dark">
-                <i data-lucide="menu" class="w-6 h-6"></i>
+            <!-- Menu Mobile Toggle (Botão Hambúrguer) -->
+            <button id="mobile-menu-button" class="md:hidden text-brand-dark p-2 relative z-50">
+                <i data-lucide="menu" class="w-7 h-7"></i>
             </button>
         </div>
+
+        <!-- MENU MOBILE (Oculto por padrão) -->
+        <nav id="mobile-menu" class="hidden md:hidden bg-white border-t border-brand-light/50 absolute w-full left-0 top-20 flex-col shadow-xl">
+            <a href="#home" class="mobile-link block px-6 py-4 text-brand-dark font-medium border-b border-brand-light/30 hover:bg-brand-50">Início</a>
+            <a href="#como-funciona" class="mobile-link block px-6 py-4 text-brand-dark font-medium border-b border-brand-light/30 hover:bg-brand-50">Como Funciona</a>
+            <a href="#publico" class="mobile-link block px-6 py-4 text-brand-dark font-medium border-b border-brand-light/30 hover:bg-brand-50">Público</a>
+            <a href="#sobre" class="mobile-link block px-6 py-4 text-brand-dark font-medium border-b border-brand-light/30 hover:bg-brand-50">Sobre Mim</a>
+            <a href="#faq" class="mobile-link block px-6 py-4 text-brand-dark font-medium border-b border-brand-light/30 hover:bg-brand-50">Dúvidas</a>
+            <div class="px-6 py-5">
+                <a href="https://wa.me/5587988298340" target="_blank" class="flex justify-center items-center gap-2 bg-brand-dark text-white px-5 py-3.5 rounded-full hover:bg-opacity-90 transition-all shadow-sm text-base font-medium w-full">
+                    <i data-lucide="message-circle" class="w-5 h-5"></i>
+                    Agendar Consulta
+                </a>
+            </div>
+        </nav>
     </header>
 
     <!-- 1. Capa (Hero Section) -->
-    <!-- Aqui a classe bg-brand-lilas está funcionando perfeitamente agora -->
     <section id="home" class="bg-brand-lilas pt-32 pb-20 md:pt-48 md:pb-32 px-6 flex flex-col items-center text-center relative overflow-hidden">
-        <!-- Elemento decorativo de fundo -->
         <div class="absolute top-0 left-1/2 transform -translate-x-1/2 w-[800px] h-[400px] bg-gradient-to-b from-white/40 to-transparent rounded-full blur-3xl -z-10"></div>
         
         <div class="max-w-3xl mx-auto">
             <span class="text-brand-dark opacity-70 font-semibold tracking-wider text-sm uppercase mb-4 block"></span>
             <h1 class="font-serif text-4xl md:text-6xl text-brand-dark mb-6 leading-tight">
-                Entre o que você sente, pensa e vive, há muito a ser  compreendido.
+                Entre o que você sente, pensa e vive, há muito a ser compreendido.
             </h1>
             <p class="text-lg md:text-xl text-brand-dark opacity-80 mb-10 max-w-2xl mx-auto font-light leading-relaxed">
                 Atendimento especializado para crianças, adolescentes, jovens adultos e orientação parental. Uma parceria entre clínica e família baseada em evidências e um olhar atento às singularidades.
             </p>
             
-            <!-- CTA Principal -->
             <a href="https://wa.me/5587988298340" target="_blank" class="inline-flex items-center gap-2 bg-brand-dark text-white px-8 py-4 rounded-full text-lg hover:bg-opacity-90 hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
                 <i data-lucide="message-circle" class="w-5 h-5"></i>
                 Conversar com Maria Eduarda
@@ -128,7 +139,6 @@
         <div class="max-w-6xl mx-auto px-6">
             <div class="text-center mb-16">
                 <h2 class="font-serif text-3xl md:text-4xl text-brand-dark mb-4">Como funciona o acompanhamento?</h2>
-                <p class="text-gray-600 max-w-2xl mx-auto"></p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -157,10 +167,10 @@
                         <i data-lucide="sprout" class="w-6 h-6"></i>
                     </div>
                     <h3 class="font-serif text-xl text-brand-dark mb-3">3. Processo Terapêutico</h3>
-                    <p class="text-gray-600 font-light leading-relaxed">Um espaço seguro onde olhamos para além das dificuldades. De forma lúdica e gentil, trabalhamos o equilíbrio emocional e as habilidades sociais. A psicoterapia é conduzida a partir da terapia cognitivo-comportamental (TCC) com foco na compreensão de pensamentos, emoções e comportamentos que impactam na rotina. </p>
+                    <p class="text-gray-600 font-light leading-relaxed">Um espaço seguro onde olhamos para além das dificuldades. De forma lúdica e gentil, trabalhamos o equilíbrio emocional e as habilidades sociais. A psicoterapia é conduzida a partir da terapia cognitivo-comportamental (TCC) com foco na compreensão de pensamentos, emoções e comportamentos que impactam na rotina.</p>
                 </div>
 
-                <!-- Card 4 (NOVO) -->
+                <!-- Card 4 -->
                 <div class="bg-brand-50 p-8 rounded-3xl border border-brand-light/50 hover:shadow-md transition-shadow group">
                     <div class="w-12 h-12 bg-brand-light text-brand-dark rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                         <i data-lucide="heart-handshake" class="w-6 h-6"></i>
@@ -171,9 +181,6 @@
 
             </div>
         </div>
-    </section>
-      
-      
     </section>
 
 <!-- 3. Público-alvo -->
@@ -218,13 +225,13 @@
                     <span class="text-gray-700 font-medium">Dificuldades Sociais e Comportamentais</span>
                 </div>
                 
-                <!-- Item 7 (Novo) -->
+                <!-- Item 7 -->
                 <div class="flex items-center gap-4 bg-white p-5 rounded-2xl shadow-sm border border-brand-light/30">
                     <i data-lucide="infinity" class="text-brand-muted w-6 h-6 flex-shrink-0"></i>
                     <span class="text-gray-700 font-medium">Neurodivergência</span>
                 </div>
                 
-                <!-- Item 8 (Novo) -->
+                <!-- Item 8 -->
                 <div class="flex items-center gap-4 bg-white p-5 rounded-2xl shadow-sm border border-brand-light/30">
                     <i data-lucide="home" class="text-brand-muted w-6 h-6 flex-shrink-0"></i>
                     <span class="text-gray-700 font-medium">Orientação e Suporte Parental</span>
@@ -371,39 +378,47 @@
             <div class="flex flex-col items-center md:items-start space-y-3">
                 <h4 class="text-brand-dark font-medium mb-2">Contatos</h4>
                 
-                <!-- Link do WhatsApp -->
                 <a href="https://wa.me/5587988298340" target="_blank" class="flex items-center gap-2 font-light hover:text-brand-muted transition-colors">
                     <i data-lucide="phone" class="w-4 h-4"></i> (87) 98829-8340
                 </a>
                 
-                <!-- Link do Instagram -->
                 <a href="https://www.instagram.com/psieduardamaral" target="_blank" class="flex items-center gap-2 font-light hover:text-brand-muted transition-colors">
                     <i data-lucide="instagram" class="w-4 h-4"></i> @psieduardamaral
                 </a>
             </div>
 
-            <!-- Espaço vazio para Endereço (Deixado para uso futuro) -->
-            <div class="flex flex-col items-center md:items-start space-y-3">
-                <!--
-                <h4 class="text-brand-dark font-medium mb-2">Endereço</h4>
-                <p class="font-light text-sm text-center md:text-left opacity-90">
-                    Rua Exemplo de Endereço, 123<br>
-                    Sala 45 - Bairro<br>
-                    Cidade - Estado, CEP 00000-000
-                </p>
-                -->
-            </div>
+            <!-- Espaço vazio para Endereço -->
+            <div class="flex flex-col items-center md:items-start space-y-3"></div>
             
-        </div> <!-- O erro estava aqui: esta tag havia sido comentada sem querer! -->           
+        </div>         
 
         <div class="max-w-6xl mx-auto px-6 border-t border-brand-muted/30 pt-6 text-center text-sm font-light opacity-70">
             &copy; 2026 Maria Eduarda Valadares Amaral. Todos os direitos reservados.
         </div>
     </footer>
 
-    <!-- Inicialização dos ícones Lucide -->
+    <!-- Inicialização dos ícones e Funcionalidades Javascript -->
     <script>
         lucide.createIcons();
+
+        // LÓGICA DO MENU MOBILE
+        const btnMenuMobile = document.getElementById('mobile-menu-button');
+        const menuMobile = document.getElementById('mobile-menu');
+        const linksMobile = document.querySelectorAll('.mobile-link');
+
+        // Alterna entre abrir e fechar o menu ao clicar no botão hambúrguer
+        btnMenuMobile.addEventListener('click', () => {
+            menuMobile.classList.toggle('hidden');
+            menuMobile.classList.toggle('flex');
+        });
+
+        // Fecha o menu automaticamente quando o usuário clica em algum link (navegação)
+        linksMobile.forEach(link => {
+            link.addEventListener('click', () => {
+                menuMobile.classList.add('hidden');
+                menuMobile.classList.remove('flex');
+            });
+        });
     </script>
 </body>
 </html>
